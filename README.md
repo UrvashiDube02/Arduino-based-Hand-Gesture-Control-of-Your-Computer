@@ -46,6 +46,7 @@ Before taking a look at the gestures, let us first see the tasks that I can acco
 
 
 **Arduino Code**
+
 const int trigPin1 = 11;
 
 const int echoPin1 = 10; 
