@@ -31,8 +31,7 @@ Now, coming to the placement of the Sensors, place both the Ultrasonic Sensors o
 
 **ARDUINO PROGRAMMING**
 
-The important part of this project is to write a program for Arduino such that it converts the distances measured by both the sensors into the appropriate 
-commands for controlling certain actions.The hand gestures in front of the Ultrasonic sensors can be calibrated so that they can perform five different tasks on your computer. 
+The important part of this project is to write a program for Arduino such that it converts the distances measured by both the sensors into the appropriate commands for controlling certain actions.The hand gestures in front of the Ultrasonic sensors can be calibrated so that they can perform five different tasks on your computer. 
 
 Before taking a look at the gestures, let us first see the tasks that I can accomplish.
 
