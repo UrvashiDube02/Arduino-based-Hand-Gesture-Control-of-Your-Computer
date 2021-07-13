@@ -20,6 +20,7 @@ The principle behind the Arduino based Hand Gesture Control of Computer is actua
 6. Double sided tapes
  
 **DESIGN**
+
 The design of the circuit is very simple, but the setup of the components is very important. The Trigger and Echo Pins of the first Ultrasonic Sensor (that is placed on the 
 left of the screen) are connected to Pins 11 and 10 of the Arduino. For the second Ultrasonic Sensor, the Trigger and Echo Pins are connected to Pins 6 and 5 of the Arduino.
 Now, coming to the placement of the Sensors, place both the Ultrasonic Sensors on top of the Laptop screen, one at the left end and the other at right. You can use double sided tape to hold the sensors onto the screen. Coming to Arduino, place it on the back of the laptop screen. Connect the wires from Arduino to Trigger and Echo Pins of the individual sensors. Now, we are ready for programming the Arduino. 
@@ -29,10 +30,11 @@ Now, coming to the placement of the Sensors, place both the Ultrasonic Sensors o
 ![image](https://user-images.githubusercontent.com/87383888/125502918-2a1edf1f-d9c4-4727-a68c-8e34055dc31f.png)
 
 **ARDUINO PROGRAMMING**
+
 The important part of this project is to write a program for Arduino such that it converts the distances measured by both the sensors into the appropriate 
 commands for controlling certain actions.The hand gestures in front of the Ultrasonic sensors can be calibrated so that they can perform five different tasks on your computer. 
 
-Before taking a look at the gestures, let us first see the tasks that we can accomplish.
+Before taking a look at the gestures, let us first see the tasks that I can accomplish.
 
 1. Switch to Next Tab in a Web Browser
 2. Switch to PreviousTab in a Web Browser
@@ -47,23 +49,24 @@ Before taking a look at the gestures, let us first see the tasks that we can acc
 
 1. Gesture 1: Place your hand in front of the Right Ultrasonic Sensor at a distance (between 15CM to 35CM) for a small duration and move your hand away from the sensor. This gesture will Scroll Down the Web Page or Decrease the Volume.
 
-2.Gesture 2: Place your hand in front of the Right Ultrasonic Sensor at a distance (between 15CM to 35CM) for a small duration and move your hand towards the sensor. This gesture will Scroll up the Web Page or Increase the Volume.
+2. Gesture 2: Place your hand in front of the Right Ultrasonic Sensor at a distance (between 15CM to 35CM) for a small duration and move your hand towards the sensor. This gesture will Scroll up the Web Page or Increase the Volume.
 
-3.Gesture 3: Swipe your hand in front of the Right Ultrasonic Sensor. This gesture will move to the Next Tab.
+3. Gesture 3: Swipe your hand in front of the Right Ultrasonic Sensor. This gesture will move to the Next Tab.
 
-4.Gesture 4: Swipe your hand in front of the Left Ultrasonic Sensor. This gesture will move to the Previous Tab or Play/Pause the Video.
+4. Gesture 4: Swipe your hand in front of the Left Ultrasonic Sensor. This gesture will move to the Previous Tab or Play/Pause the Video.
 
-5.Gesture 5: Swipe your hand across both the sensors (Left Sensor first). This action will Switch 
+5. Gesture 5: Swipe your hand across both the sensors (Left Sensor first). This action will Switch 
 between Tasks.
 
 **PYTHON PROGRAMMING**
+
 Writing Python Program for Arduino based Hand Gesture Control is very simple. You just need to read the Serial data from Arduino and invoke certain keyboard key presses. In order to achieve this, you have to install a special Python Module called PyAutoGUI.
 
 **Installing PyAutoGUI**
 
 • The following steps will guide you through the installation of PyAutoGUI on Windows Computers. The module PyAutoGUI will help you to programmatically control the mouse and keyboard.
-• With the help of PyAutoGUI, we can write a Python Program to mimic the actions of mouse like left click, right click, scroll, etc. and keyboard like keypress, enter text, multiple key press, etc. without physically doing them. Let us install PyAutoGUI.
-• If you remember in the previous project, where we controlled an LED on Arduino using Python, we have installed Python in the directory “C:\Python27”. 
+• With the help of PyAutoGUI, I can write a Python Program to mimic the actions of mouse like left click, right click, scroll, etc. and keyboard like keypress, enter text, multiple key press, etc. without physically doing them. Let us install PyAutoGUI.
+• If you remember in the previous project, where I controlled an LED on Arduino using Python, I have installed Python in the directory “C:\Python27”. 
 • Open Command Prompt with Administrator privileges and change to the directory where you have installed Python (in my case, it is C:\Python27). 
 • If you have installed the latest version of Python, then pip (a tool for installing packages in Python) will already be installed. To check if pip is installed or not, type   pip-V.
 • You should upgrade to the latest package of pip using the following command. If pip is already in its latest version, then ignore this step.Type python -m pip install -U pip
