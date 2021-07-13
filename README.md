@@ -44,70 +44,6 @@ Before taking a look at the gestures, let us first see the tasks that I can acco
 7. Increase Volume
 8. Decrease Volume
 
-**HAND GESTURES**
-
-1. Gesture 1: Place your hand in front of the Right Ultrasonic Sensor at a distance (between 15CM to 35CM) for a small duration and move your hand away from the sensor. This gesture will Scroll Down the Web Page or Decrease the Volume.
-
-2. Gesture 2: Place your hand in front of the Right Ultrasonic Sensor at a distance (between 15CM to 35CM) for a small duration and move your hand towards the sensor. This gesture will Scroll up the Web Page or Increase the Volume.
-
-3. Gesture 3: Swipe your hand in front of the Right Ultrasonic Sensor. This gesture will move to the Next Tab.
-
-4. Gesture 4: Swipe your hand in front of the Left Ultrasonic Sensor. This gesture will move to the Previous Tab or Play/Pause the Video.
-
-5. Gesture 5: Swipe your hand across both the sensors (Left Sensor first). This action will Switch 
-between Tasks.
-
-**PYTHON PROGRAMMING**
-
-Writing Python Program for Arduino based Hand Gesture Control is very simple. You just need to read the Serial data from Arduino and invoke certain keyboard key presses. In order to achieve this, you have to install a special Python Module called PyAutoGUI.
-
-**Installing PyAutoGUI**
-
-• The following steps will guide you through the installation of PyAutoGUI on Windows Computers. The module PyAutoGUI will help you to programmatically control the mouse and keyboard.
-• With the help of PyAutoGUI, I can write a Python Program to mimic the actions of mouse like left click, right click, scroll, etc. and keyboard like keypress, enter text, multiple key press, etc. without physically doing them. Let us install PyAutoGUI.
-• If you remember in the previous project, where I controlled an LED on Arduino using Python, I have installed Python in the directory “C:\Python27”. 
-• Open Command Prompt with Administrator privileges and change to the directory where you have installed Python (in my case, it is C:\Python27). 
-• If you have installed the latest version of Python, then pip (a tool for installing packages in Python) will already be installed. To check if pip is installed or not, type   pip-V.
-• You should upgrade to the latest package of pip using the following command. If pip is already in its latest version, then ignore this step.Type python -m pip install -U pip
-• After upgrading pip, you can proceed to install PyAutoGUI. In order to install PyAutoGUI, type python -m pip install pyautogui.
-
-**PYTHON CODE**
-
-If everything goes well till now, you can proceed to write the Python Code. If you observe the Arduino Code given above, the Arduino sends out five different texts or commands through Serial Port upon detecting appropriate hand gestures. These commands are
-1. Next
-2. Previous
-3. Down
-4. Up
-5. Change
-
-Using these commands along with few functions in PyAutoGUI (like hotkey, scroll, keyDown, press and keyUp), you can write a simple Python Code that will execute the following tasks of keyboard and mouse.
-1. Data = “next” – – > Action = Ctrl+PgDn
-2. Data = “previous” – – > Action = Ctrl+PgUp
-3. Data = “down” – – > Action = Down Arrow
-4. Data = “up” – – > Action = Up Arrow
-5. Data = “change” – – > Action = Alt+Tab
-
-**APPLICATIONS**
-
-In this project, we have implemented Arduino based Hand Gesture Control of Your Computer, where few hand gestures made in front of the computer will perform certain tasks in the computer without using mouse or keyboard. 
-
-This type of hand gesture control of computers can be used for –
-1. VR (Virtual Reality),
-2. AR (Augmented Reality)
-3. 3D Design
-4. Reading Sign Language, etc
-
-**OUTPUT OF THE PROJECT**
-
-• The link to the video of the project is provided below:
-
-https://youtu.be/jzDRe90CCWU
-
-• The video shows the following functions:
-1. Scroll up and down
-2. Switch to next page 
-3. Play 
-4. Volume increase decrease
 
 **Arduino Code**
 const int trigPin1 = 11;
@@ -258,6 +194,49 @@ find_distance(); }
 
 l=0; }}
 
+**HAND GESTURES**
+
+1. Gesture 1: Place your hand in front of the Right Ultrasonic Sensor at a distance (between 15CM to 35CM) for a small duration and move your hand away from the sensor. This gesture will Scroll Down the Web Page or Decrease the Volume.
+
+2. Gesture 2: Place your hand in front of the Right Ultrasonic Sensor at a distance (between 15CM to 35CM) for a small duration and move your hand towards the sensor. This gesture will Scroll up the Web Page or Increase the Volume.
+
+3. Gesture 3: Swipe your hand in front of the Right Ultrasonic Sensor. This gesture will move to the Next Tab.
+
+4. Gesture 4: Swipe your hand in front of the Left Ultrasonic Sensor. This gesture will move to the Previous Tab or Play/Pause the Video.
+
+5. Gesture 5: Swipe your hand across both the sensors (Left Sensor first). This action will Switch 
+between Tasks.
+
+**PYTHON PROGRAMMING**
+
+Writing Python Program for Arduino based Hand Gesture Control is very simple. You just need to read the Serial data from Arduino and invoke certain keyboard key presses. In order to achieve this, you have to install a special Python Module called PyAutoGUI.
+
+**Installing PyAutoGUI**
+
+• The following steps will guide you through the installation of PyAutoGUI on Windows Computers. The module PyAutoGUI will help you to programmatically control the mouse and keyboard.
+• With the help of PyAutoGUI, I can write a Python Program to mimic the actions of mouse like left click, right click, scroll, etc. and keyboard like keypress, enter text, multiple key press, etc. without physically doing them. Let us install PyAutoGUI.
+• If you remember in the previous project, where I controlled an LED on Arduino using Python, I have installed Python in the directory “C:\Python27”. 
+• Open Command Prompt with Administrator privileges and change to the directory where you have installed Python (in my case, it is C:\Python27). 
+• If you have installed the latest version of Python, then pip (a tool for installing packages in Python) will already be installed. To check if pip is installed or not, type   pip-V.
+• You should upgrade to the latest package of pip using the following command. If pip is already in its latest version, then ignore this step.Type python -m pip install -U pip
+• After upgrading pip, you can proceed to install PyAutoGUI. In order to install PyAutoGUI, type python -m pip install pyautogui.
+
+**PYTHON CODE**
+
+If everything goes well till now, you can proceed to write the Python Code. If you observe the Arduino Code given above, the Arduino sends out five different texts or commands through Serial Port upon detecting appropriate hand gestures. These commands are
+1. Next
+2. Previous
+3. Down
+4. Up
+5. Change
+
+Using these commands along with few functions in PyAutoGUI (like hotkey, scroll, keyDown, press and keyUp), you can write a simple Python Code that will execute the following tasks of keyboard and mouse.
+1. Data = “next” – – > Action = Ctrl+PgDn
+2. Data = “previous” – – > Action = Ctrl+PgUp
+3. Data = “down” – – > Action = Down Arrow
+4. Data = “up” – – > Action = Up Arrow
+5. Data = “change” – – > Action = Alt+Tab
+
 
 **Python Code**
 
@@ -304,3 +283,25 @@ pyautogui.press('tab')
 pyautogui.keyUp('alt') 
 
 incoming_data = "";
+
+**APPLICATIONS**
+
+In this project, we have implemented Arduino based Hand Gesture Control of Your Computer, where few hand gestures made in front of the computer will perform certain tasks in the computer without using mouse or keyboard. 
+
+This type of hand gesture control of computers can be used for –
+1. VR (Virtual Reality),
+2. AR (Augmented Reality)
+3. 3D Design
+4. Reading Sign Language, etc
+
+**OUTPUT OF THE PROJECT**
+
+• The link to the video of the project is provided below:
+
+https://youtu.be/jzDRe90CCWU
+
+• The video shows the following functions:
+1. Scroll up and down
+2. Switch to next page 
+3. Play 
+4. Volume increase decrease
